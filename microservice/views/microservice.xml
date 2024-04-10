@@ -1,0 +1,51 @@
+<odoo>
+  <data>
+  
+    <!-- Views -->
+    <record model="ir.ui.view" id="microservice_microservice_tree">
+        <field name="name">microservice.microservice.tree</field>
+        <field name="model">microservice.microservice</field>
+        <field name="arch" type="xml">
+            <tree string="Microservice">
+                <field name="name" />
+                <field name="url"/>
+            </tree>
+        </field>
+     </record>
+        
+     <record model="ir.ui.view" id="microservice_microservice_form">
+        <field name="name">microservice.microservice.form</field>
+        <field name="model">microservice.microservice</field>
+        <field name="arch" type="xml">
+            <form string="Microservice">
+                <sheet>
+                    <group>
+		                <field name="name" />
+                        <field name="url"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+            
+    <!-- Action -->
+    <record model="ir.actions.act_window" id="microservice_microservice_action">
+        <field name="name">Microservice</field>
+        <field name="res_model">microservice.microservice</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">Create a new Microservice
+            </p>
+        </field>
+    </record>
+          
+    <!-- Menu Item -->
+    <menuitem name="Microservice" 
+    	id="menu_microservice_microservice"
+    	parent="menu_microservice"
+    	action="microservice_microservice_action" 
+    	sequence="100" groups="microservice_manager"/>
+  
+  </data>
+</odoo>

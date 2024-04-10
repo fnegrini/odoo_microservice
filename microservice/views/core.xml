@@ -1,0 +1,13 @@
+<odoo>
+  <data>
+  
+    <!-- Microservices main menu -->
+    <menuitem name="Microservice" 
+        id="menu_microservice"
+        groups="microservice_manager"
+        web_icon="grifo,static/description/icon.png"
+        sequence="99000"/>
+
+  </data>
+
+</odoo>

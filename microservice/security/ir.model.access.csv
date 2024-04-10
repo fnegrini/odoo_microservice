@@ -1,0 +1,8 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_microservice_manager,Microservice Manager,model_microservice_microservice,microservice_manager,1,1,1,1
+
+access_task_group_manager,Task group Manager,model_microservice_task_group,microservice_manager,1,1,1,1
+
+access_task_manager,Task Manager,model_microservice_task,microservice_manager,1,1,1,1
+
+access_request_manager,Request Manager,model_microservice_request,microservice_manager,1,1,1,1

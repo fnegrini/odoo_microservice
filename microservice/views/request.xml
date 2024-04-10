@@ -1,0 +1,60 @@
+<odoo>
+  <data>
+  
+    <!-- Views -->
+    <record model="ir.ui.view" id="microservice_request_tree">
+        <field name="name">microservice.request.tree</field>
+        <field name="model">microservice.request</field>
+        <field name="arch" type="xml">
+            <tree string="Microservice request">
+                <field name="microservice" required="1"/>
+                <field name="task" required="1"/>
+                <field name="name" readonly="1" force_save="1"/>
+                <field name="state" readonly="1"/>
+            </tree>
+        </field>
+     </record>
+        
+     <record model="ir.ui.view" id="microservice_request_form">
+        <field name="name">microservice.request.form</field>
+        <field name="model">microservice.request</field>
+        <field name="arch" type="xml">
+            <form string="Microservice request">
+                <sheet>
+                    <header>
+                        <field name="state" widget="statusbar" statusbar_visible="initical,staggered,processed" />
+                    </header>                
+                    <group>
+                        <field name="microservice" required="1"/>
+                        <field name="task" required="1"/>
+                        <field name="name" readonly="1" force_save="1"/>
+                        <field name="params"/>
+                        <field name="result" readonly="1" attrs="{'invisible': [('result', 'in', ['', False])]}"/>
+                        <field name="error_message" readonly="1" attrs="{'invisible': [('result', 'in', ['', False])]}"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+            
+    <!-- Action -->
+    <record model="ir.actions.act_window" id="microservice_request_action">
+        <field name="name">Microservice request</field>
+        <field name="res_model">microservice.request</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">Create a new Microservice request
+            </p>
+        </field>
+    </record>
+          
+    <!-- Menu Item -->
+    <menuitem name="Request" 
+    	id="menu_microservice_request"
+    	parent="menu_microservice"
+    	action="microservice_request_action" 
+    	sequence="1000" groups="microservice_manager"/>
+  
+  </data>
+</odoo>

@@ -1,0 +1,25 @@
+<odoo>
+    <data noupdate="1">
+
+	    <record id="microservice_localhost" model="microservice.microservice">
+	        <field name="name">Local service</field>
+	        <field name="url">localhost:9000</field>
+	    </record>
+
+	    <record id="microservice_task_group_test" model="microservice.task.group">
+	        <field name="code">TST</field>
+	        <field name="name">Testing group</field>
+	    </record>
+
+	    <record id="microservice_task_test" model="microservice.task">
+	        <field name="group" ref="microservice.microservice_task_group_test"></field>
+	        <field name="code">TST</field>
+	        <field name="name">Testing task</field>
+	        <field name="request">
+import random
+result = random.random()            
+            </field>
+	    </record>
+
+    </data>
+</odoo>
